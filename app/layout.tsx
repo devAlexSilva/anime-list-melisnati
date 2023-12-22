@@ -9,7 +9,7 @@ import "./globals.css";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anime List",
+  title: "Melisnati",
   description: "Sua lista de animes favoritos para compartilhar",
 };
 
@@ -21,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={dmSans.className}>
-        <main className="max-w-7xl mx-auto bg-[#0F1117]">
+        <div className="max-w-7xl mx-auto bg-[#0F1117]">
           <Hero />
           {children}
           <Footer />
-        </main>
+        </div>
       </body>
     </html>
   );
