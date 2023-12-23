@@ -22,7 +22,7 @@ function AnimeCard({ anime, index }: AnimeCardProp) {
       transition={transitions}
       className="max-w-sm rounded relative w-full"
     >
-      <div className="relative w-full h-[45vh]">
+      <div className="relative w-full h-[35vh] md:h-[45vh]">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}
@@ -35,7 +35,7 @@ function AnimeCard({ anime, index }: AnimeCardProp) {
           <h2 className="font-bold text-white md:text-xl text-lg line-clamp-2 w-full">
             {anime.name}
           </h2>
-          <div className="py-1 px-2 bg-[#161921] rounded-sm" title="Tipo de anime">
+          <div className="py-1 hidden sm:block px-2 bg-[#161921] rounded-sm" title="Tipo de anime">
             <p className="text-white text-sm font-bold capitalize">
               {anime.kind}
             </p>
