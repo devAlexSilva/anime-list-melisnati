@@ -4,13 +4,12 @@ import { FetchFullAnimeList } from "@/app/fetchAnimeList";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { AnimeCardProps } from "./AnimeCard";
-
+import { AnimeProp } from "./types"
 let page = 2
 
 function LoadMore() {
   const [ref, inView] = useInView({ threshold: 0 })
-  const [data, setData] = useState<AnimeCardProps[]>([])
+  const [data, setData] = useState<AnimeProp[]>([])
 
   useEffect(() => {
     if (inView) {

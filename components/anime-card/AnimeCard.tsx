@@ -1,39 +1,21 @@
 import Image from "next/image";
 import { FrameMotionCard } from "./FrameMotionCard";
-
-export interface AnimeProp {
-  id: string;
-  name: string;
-  image: {
-    original: string;
-  };
-  kind: string;
-  episodes: number;
-  episodes_aired: number;
-  score: string;
-}
-
-export type AnimeCardProps = JSX.Element
-
-interface Prop {
-  anime: AnimeProp;
-  index: number;
-}
+import { AnimeCardProp } from "./types";
 
 const variants = {
-  hidden: {opacity: 0},
-  visible: {opacity: 1}
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
 }
 
-const transitions = {
-  delay: 1,
-  ease: 'easeInOut',
-  duration: 0.5
-}
+function AnimeCard({ anime, index }: AnimeCardProp) {
 
-function AnimeCard({ anime, index }: Prop) {
+  const transitions = {
+    delay: index * 0.25,
+    ease: 'easeInOut',
+    duration: 0.5
+  }
   return (
-    <FrameMotionCard 
+    <FrameMotionCard
       initial='hidden'
       animate='visible'
       variants={variants}
@@ -53,14 +35,14 @@ function AnimeCard({ anime, index }: Prop) {
           <h2 className="font-bold text-white md:text-xl text-lg line-clamp-2 w-full">
             {anime.name}
           </h2>
-          {/* <div className="py-1 px-2 bg-[#161921] rounded-sm">
+          <div className="py-1 px-2 bg-[#161921] rounded-sm" title="Tipo de anime">
             <p className="text-white text-sm font-bold capitalize">
               {anime.kind}
             </p>
-          </div> */}
+          </div>
         </div>
         <div className="flex gap-4 items-center">
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-2 items-center" title="Número de episódios">
             <Image
               src="./episodes.svg"
               alt="episodes"
@@ -72,7 +54,7 @@ function AnimeCard({ anime, index }: Prop) {
               {anime.episodes || anime.episodes_aired}
             </p>
           </div>
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-2 items-center" title="Avaliação">
             <Image
               src="./star.svg"
               alt="star"

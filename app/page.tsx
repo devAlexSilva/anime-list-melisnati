@@ -1,5 +1,5 @@
-import { AnimeCardProps } from "@/components/AnimeCard";
-import LoadMore from "../components/LoadMore";
+import { AnimeCardProps } from "@/components/anime-card/AnimeCard";
+import LoadMore from "../components/infinity-scroll/LoadMore";
 import { FetchFullAnimeList } from "./fetchAnimeList";
 
 async function Home() {

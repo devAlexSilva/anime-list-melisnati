@@ -1,9 +1,10 @@
 'use server'
 
-import AnimeCard, { AnimeProp } from "@/components/AnimeCard"
+import AnimeCard from "@/components/anime-card/AnimeCard"
+import { AnimeProp } from "@/components/anime-card/types"
 
 export const FetchFullAnimeList = async (page: number) => {
-  const res = await fetch(`https://shikimori.one/api/animes?page=${page}&limit=8`)
+  const res = await fetch(`https://shikimori.one/api/animes?page=${page}&limit=8&order=random`)
   const data: AnimeProp[] = await res.json()
   
   console.log(data)
