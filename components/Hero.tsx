@@ -7,17 +7,19 @@ function Hero() {
         <Image
           src="./logo.svg"
           alt="logo"
-          width={101}
-          height={96}
+          width={84}
+          height={84}
           className="object-contain"
         />
         <h1 className="sm:text-6xl text-5xl text-white lg:max-w-lg font-bold leading-[120%]">
-          Explore The <span className="red-gradient">Diverse Realms</span> of
-          Anime Magic
+          Descubra Diversos
+          <span className="red-gradient"> Animes </span> &
+          <span className="red-gradient"> Compartilhe </span>
+          com Todos
         </h1>
       </div>
       <div className="lg:flex-1 relative w-full h-[50vh] justify-center">
-        <Image src="/anime.png" alt="anime" fill className="object-contain" />
+        <Image src="/c2_lelouch.png" alt="anime" fill className="object-contain" />
       </div>
     </header>
   );

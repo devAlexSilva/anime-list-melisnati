@@ -50,14 +50,14 @@ function AnimeCard({ anime, index }: Prop) {
       </div>
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-1">
-          <h2 className="font-bold text-white text-xl line-clamp-1 w-full">
+          <h2 className="font-bold text-white md:text-xl text-lg line-clamp-2 w-full">
             {anime.name}
           </h2>
-          <div className="py-1 px-2 bg-[#161921] rounded-sm">
+          {/* <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-sm font-bold capitalize">
               {anime.kind}
             </p>
-          </div>
+          </div> */}
         </div>
         <div className="flex gap-4 items-center">
           <div className="flex flex-row gap-2 items-center">
