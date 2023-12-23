@@ -12,6 +12,12 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.orange-gradient {
+  background: linear-gradient(92deg, #ffad49 2.87%, #ee6f1a 96.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 :root {
   color-scheme: dark;
