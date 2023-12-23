@@ -1,5 +1,6 @@
 export type animePageProps = {
   searchParams: {
-    category: string
+    category: string,
+    title: string
   }
 }
