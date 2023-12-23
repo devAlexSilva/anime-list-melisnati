@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FrameMotionCard } from "./FrameMotionCard";
 
 export interface AnimeProp {
   id: string;
@@ -12,14 +13,33 @@ export interface AnimeProp {
   score: string;
 }
 
+export type AnimeCardProps = JSX.Element
+
 interface Prop {
   anime: AnimeProp;
   index: number;
 }
 
-function AnimeCard({ anime }: Prop) {
+const variants = {
+  hidden: {opacity: 0},
+  visible: {opacity: 1}
+}
+
+const transitions = {
+  delay: 1,
+  ease: 'easeInOut',
+  duration: 0.5
+}
+
+function AnimeCard({ anime, index }: Prop) {
   return (
-    <div className="max-w-sm rounded relative w-full">
+    <FrameMotionCard 
+      initial='hidden'
+      animate='visible'
+      variants={variants}
+      transition={transitions}
+      className="max-w-sm rounded relative w-full"
+    >
       <div className="relative w-full h-[45vh]">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
@@ -64,7 +84,7 @@ function AnimeCard({ anime }: Prop) {
           </div>
         </div>
       </div>
-    </div>
+    </FrameMotionCard>
   );
 }
 
