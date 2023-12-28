@@ -2,18 +2,18 @@ import Image from "next/image";
 import { AnimeCardProp } from "@/components/anime-card/types";
 
 
-function AnimeDetails({ anime, index }: AnimeCardProp) {
-console.log(anime)
+async function AnimeDetails({ anime, index }: AnimeCardProp) {
   return (
     <>
-      <div className="relative w-full h-[35vh] md:h-[45vh]">
-          <Image
-            src={`https://shikimori.one${anime.image.original}`}
-            alt={anime.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="rounded-xl"
-          />
+    {console.log(anime)}
+      <div className="relative w-full sm:w-3/4 max-md:mx-auto h-[35vh] sm:h-[50vh]">
+        <Image
+          src={`https://shikimori.one${anime.image.original}`}
+          alt={anime.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-xl"
+        />
       </div>
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-1">
@@ -49,6 +49,10 @@ console.log(anime)
             />
             <p className="text-base font-bold text-[#FFAD49]">{anime.score}</p>
           </div>
+        </div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex necessitatibus, soluta quibusdam eligendi error sapiente atque illo earum quas labore ipsum distinctio deserunt ipsa, voluptates debitis, nisi autem. Eum, nam?
         </div>
       </div>
     </>
