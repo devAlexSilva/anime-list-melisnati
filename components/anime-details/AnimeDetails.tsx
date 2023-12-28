@@ -1,40 +1,20 @@
 import Image from "next/image";
-import { FrameMotionCard } from "./FrameMotionCard";
-import { AnimeCardProp } from "./types";
-import Link from "next/link";
+import { AnimeCardProp } from "@/components/anime-card/types";
 
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 }
-}
 
-function AnimeCard({ anime, index }: AnimeCardProp) {
-
-  const transitions = {
-    delay: index * 0.25,
-    ease: 'easeInOut',
-    duration: 0.5
-  }
+function AnimeDetails({ anime, index }: AnimeCardProp) {
+console.log(anime)
   return (
-    <FrameMotionCard
-      initial='hidden'
-      animate='visible'
-      variants={variants}
-      transition={transitions}
-      className="max-w-sm rounded relative w-full"
-    >
-        <Link href={`/anime/${anime.id}`}>
+    <>
       <div className="relative w-full h-[35vh] md:h-[45vh]">
           <Image
             src={`https://shikimori.one${anime.image.original}`}
             alt={anime.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
             className="rounded-xl"
           />
       </div>
-        </Link>
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-1">
           <h2 className="font-bold text-white md:text-xl text-lg line-clamp-2 w-full">
@@ -49,7 +29,7 @@ function AnimeCard({ anime, index }: AnimeCardProp) {
         <div className="flex gap-4 items-center">
           <div className="flex flex-row gap-2 items-center" title="Número de episódios">
             <Image
-              src="./episodes.svg"
+              src="/episodes.svg"
               alt="episodes"
               width={20}
               height={20}
@@ -61,7 +41,7 @@ function AnimeCard({ anime, index }: AnimeCardProp) {
           </div>
           <div className="flex flex-row gap-2 items-center" title="Avaliação">
             <Image
-              src="./star.svg"
+              src="/star.svg"
               alt="star"
               width={18}
               height={18}
@@ -71,8 +51,8 @@ function AnimeCard({ anime, index }: AnimeCardProp) {
           </div>
         </div>
       </div>
-    </FrameMotionCard>
+    </>
   );
 }
 
-export default AnimeCard;
+export default AnimeDetails;

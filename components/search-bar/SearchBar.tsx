@@ -2,16 +2,18 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SearchBar() {
   const [search, setSearch] = useState('')
+  const router = useRouter()
 
-  const handleSearch = () => {
-    console.log(search)
+  const handleSearch = () => {    
+    router.push(`/anime/${search}`)  
     setSearch('')
   }
-  return (
 
+  return (
     <div className="relative max-w-lg w-screen px-4">
       <button onClick={handleSearch}>
         <Image
