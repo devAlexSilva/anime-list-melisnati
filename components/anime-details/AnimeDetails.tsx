@@ -5,8 +5,7 @@ import { AnimeCardProp } from "@/components/anime-card/types";
 async function AnimeDetails({ anime, index }: AnimeCardProp) {
   return (
     <>
-    {console.log(anime)}
-      <div className="relative w-full sm:w-3/4 max-md:mx-auto h-[35vh] sm:h-[50vh]">
+      <div className="relative w-4/5 sm:w-full max-md:mx-auto h-[45vh] sm:h-[50vh] lg:h-[45vh] 2xl:h-[35vh]">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}

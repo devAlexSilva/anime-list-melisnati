@@ -9,7 +9,7 @@ export default function SearchBar() {
   const router = useRouter()
 
   const handleSearch = () => {    
-    router.push(`/anime/${search}`)  
+    router.push(`/anime?name=${search}`)
     setSearch('')
   }
 

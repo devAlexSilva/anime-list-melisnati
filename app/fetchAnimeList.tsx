@@ -29,6 +29,7 @@ export const FetchAnimeById = async (id: string) => {
 export const FetchAnimeByName = async (name: string) => {
   const res = await fetch(`https://shikimori.one/api/animes?search=${name}`)
   const data: AnimeProp[] = await res.json()
+  console.log(data)
 
-  return <AnimeDetails key={data[0]?.id} anime={data[0]} index={1}/>
+  return data.map((item, index) => <AnimeDetails key={item.id} anime={item} index={index}/>)
 }
